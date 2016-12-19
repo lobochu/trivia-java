@@ -4,11 +4,17 @@ Metrics/
 #Java Build output files
 target/
 
+gradle/*
+.gradle/*
+gradlew*
+settings.*
+build.*
+
 *.iws
 .idea/workspace.xml
 .idea/tasks.xml
 *.un~
-.idea/*
+#.idea/*
 
 # Ignore build output
 */classes
@@ -50,7 +56,7 @@ target/
 /out/
 
 # mpeltonen/sbt-idea plugin
-.idea_modules/
+#.idea_modules/
 
 # JIRA plugin
 atlassian-ide-plugin.xml
@@ -66,7 +72,7 @@ fabric.properties
 
 # *.iml
 # modules.xml
-# .idea/misc.xml 
+#.idea/misc.xml 
 # *.ipr
 
 
