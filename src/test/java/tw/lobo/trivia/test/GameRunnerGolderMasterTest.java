@@ -1,11 +1,12 @@
 
-package com.adaptionsoft.games.trivia.runner;
+package tw.lobo.trivia.test;
 import com.adaptionsoft.games.uglytrivia.Game;
 
 import java.util.Random;
 
 
-public class GameRunner {
+//Intentionally duplicates producton GameRunner for now.
+public class GameRunnerGolderMasterTest {
 
 	private static boolean notAWinner;
 
@@ -16,7 +17,7 @@ public class GameRunner {
 		aGame.add("Pat");
 		aGame.add("Sue");
 		
-		Random rand = new Random();
+		Random rand = new Random(7777);
 	
 		do {
 			

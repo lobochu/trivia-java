@@ -4,6 +4,8 @@ Metrics/
 #Java Build output files
 target/
 
+test-data/*
+
 gradle/*
 .gradle/*
 gradlew*
