@@ -2,6 +2,7 @@ package tw.lobo.trivia.test;
 
 import com.adaptionsoft.games.uglytrivia.Game;
 
+import java.io.*;
 import java.util.Random;
 
 //Intentionally duplicates producton GameRunner for now.
@@ -9,7 +10,18 @@ public class GameRunnerGolderMasterTest {
 
   private static boolean notAWinner;
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
+
+    PrintStream systemOut = System.out;
+
+    //REFACTOR Make the current working directory more explicit?
+    final File testRunOutputFile = new File("test-data", "golden-master.txt");
+//    PrintWriter canvas = new PrintWriter(new FileWriter(testRunOutputFile));
+//    canvas.println("Hello, world!");
+//    canvas.flush();
+//    canvas.close();
+    System.setOut(new PrintStream(testRunOutputFile));
+
     Game aGame = new Game();
 
     aGame.add("Chet");
@@ -27,6 +39,8 @@ public class GameRunnerGolderMasterTest {
         notAWinner = aGame.wasCorrectlyAnswered();
       }
     } while (notAWinner);
+
+    System.setOut(systemOut);
 
   }
 }
