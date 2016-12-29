@@ -15,7 +15,7 @@ public class GameRunnerGolderMasterTest {
     PrintStream systemOut = System.out;
 
     //REFACTOR Make the current working directory more explicit?
-    final File testRunOutputFile = new File("test-data", "golden-master.txt");
+    final File testRunOutputFile = new File("test-data", "test-run.txt");
 //    PrintWriter canvas = new PrintWriter(new FileWriter(testRunOutputFile));
 //    canvas.println("Hello, world!");
 //    canvas.flush();
