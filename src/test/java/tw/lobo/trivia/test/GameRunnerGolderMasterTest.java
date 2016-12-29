@@ -20,6 +20,10 @@ public class GameRunnerGolderMasterTest {
 //    canvas.println("Hello, world!");
 //    canvas.flush();
 //    canvas.close();
+
+
+    // REFACTOR Make the game output stream pluggable, since clearly, I want to plug
+    // something else into it.
     System.setOut(new PrintStream(testRunOutputFile));
 
     Game aGame = new Game();
