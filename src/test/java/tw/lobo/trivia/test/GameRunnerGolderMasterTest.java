@@ -15,7 +15,7 @@ public class GameRunnerGolderMasterTest {
     PrintStream systemOut = System.out;
 
     //REFACTOR Make the current working directory more explicit?
-    final File testRunOutputFile = new File("test-data", "test-run.txt");
+    final File testRunOutputFile = new File("test-data", "test-run-7777.txt");
 //    PrintWriter canvas = new PrintWriter(new FileWriter(testRunOutputFile));
 //    canvas.println("Hello, world!");
 //    canvas.flush();
@@ -25,7 +25,6 @@ public class GameRunnerGolderMasterTest {
     // REFACTOR Make the game output stream pluggable, since clearly, I want to plug
     // something else into it.
     System.setOut(new PrintStream(testRunOutputFile));
-
     Game aGame = new Game();
 
     aGame.add("Chet");
