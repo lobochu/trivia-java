@@ -14,8 +14,10 @@ public class GameRunnerGolderMasterTest {
 
     PrintStream systemOut = System.out;
 
+    final int gameId = 7777;
+
     //REFACTOR Make the current working directory more explicit?
-    final File testRunOutputFile = new File("test-data", String.format("test-run-%d.txt", 7777));
+    final File testRunOutputFile = new File("test-data", String.format("test-run-%d.txt", gameId));
 //    PrintWriter canvas = new PrintWriter(new FileWriter(testRunOutputFile));
 //    canvas.println("Hello, world!");
 //    canvas.flush();
@@ -31,7 +33,8 @@ public class GameRunnerGolderMasterTest {
     aGame.add("Pat");
     aGame.add("Sue");
 
-    Random rand = new Random(7777);
+    // We can conveniently use the game ID directly as a random number generator seed.
+    Random rand = new Random(gameId);
 
     do {
       aGame.roll(rand.nextInt(5) + 1);
