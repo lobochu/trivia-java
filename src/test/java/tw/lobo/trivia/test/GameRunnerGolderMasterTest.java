@@ -11,13 +11,14 @@ public class GameRunnerGolderMasterTest {
   private static boolean notAWinner;
 
   public static void main(String[] args) throws IOException {
-
     PrintStream systemOut = System.out;
 
-    int arbitaryGameIdOffset = 13;
-    final int startingGameId= 7777;
+    final int howManyTestRuns = 2;
 
-    for (int i = 0; i<1 ; i++) {
+    final int startingGameId = 7777;
+    final int arbitaryGameIdOffset = 13;
+
+    for (int i = 0; i < howManyTestRuns; i++) {
       final int gameId = startingGameId + i * arbitaryGameIdOffset;
 
       //REFACTOR Make the current working directory more explicit?
@@ -33,7 +34,7 @@ public class GameRunnerGolderMasterTest {
       aGame.add("Sue");
 
       // We can conveniently use the game ID directly as a random number generator seed.
-      Random rand = new Random(startingGameId);
+      Random rand = new Random(gameId);
 
       do {
         aGame.roll(rand.nextInt(5) + 1);
