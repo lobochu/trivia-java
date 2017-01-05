@@ -14,9 +14,12 @@ public class GameRunnerGolderMasterTest {
 
     PrintStream systemOut = System.out;
 
-    final int gameId = 7777;
+    int arbitaryGameIdOffset = 13;
+    final int startingGameId= 7777;
 
     for (int i = 0; i<1 ; i++) {
+      final int gameId = startingGameId + i * arbitaryGameIdOffset;
+
       //REFACTOR Make the current working directory more explicit?
       final File testRunOutputFile = new File("test-data", String.format("test-run-%d.txt", gameId));
 
@@ -30,7 +33,7 @@ public class GameRunnerGolderMasterTest {
       aGame.add("Sue");
 
       // We can conveniently use the game ID directly as a random number generator seed.
-      Random rand = new Random(gameId);
+      Random rand = new Random(startingGameId);
 
       do {
         aGame.roll(rand.nextInt(5) + 1);
